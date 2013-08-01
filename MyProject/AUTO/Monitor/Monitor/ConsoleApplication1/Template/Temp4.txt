@@ -1,0 +1,4 @@
+﻿			if (cmd.IndexOf("$[parameter]", StringComparison.OrdinalIgnoreCase) > 0)
+            {
+		        cmd = cmd.Replace("$[Parameter]", [parameter]);
+            }

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAutomation", "UIAutomation\UIAutomation.csproj", "{32BD234B-014D-47F0-8A95-A1D14D819A87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{411A6F35-3B14-4996-9B75-D2E124B10733}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		UIAutomation.vsmdi = UIAutomation.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.5.222.118:8080/tfs/labtest
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UIAutomation\\UIAutomation.csproj
+		SccProjectName1 = UIAutomation
+		SccLocalPath1 = UIAutomation
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = UIAutomation.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32BD234B-014D-47F0-8A95-A1D14D819A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BD234B-014D-47F0-8A95-A1D14D819A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BD234B-014D-47F0-8A95-A1D14D819A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BD234B-014D-47F0-8A95-A1D14D819A87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

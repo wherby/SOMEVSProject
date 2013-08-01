@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESI_Test", "ESI_Test\ESI_Test.csproj", "{0062BF1C-3B91-4D02-8F0A-E3E61E658674}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28E9FDF3-2F56-4637-86B9-5B7FF34AC977}"
+	ProjectSection(SolutionItems) = preProject
+		ESI_Test.vsmdi = ESI_Test.vsmdi
+		Local.testsettings = Local.testsettings
+		Local1.testsettings = Local1.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		TraceAndTestImpact1.testsettings = TraceAndTestImpact1.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ESI_Test.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0062BF1C-3B91-4D02-8F0A-E3E61E658674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0062BF1C-3B91-4D02-8F0A-E3E61E658674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0062BF1C-3B91-4D02-8F0A-E3E61E658674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0062BF1C-3B91-4D02-8F0A-E3E61E658674}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

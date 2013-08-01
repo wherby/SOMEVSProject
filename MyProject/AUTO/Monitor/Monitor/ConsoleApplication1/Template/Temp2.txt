@@ -1,0 +1,4 @@
+﻿			if ([parameter]String != null)
+            {
+		        sb.AppendFormat([AppendParameter]);
+            }

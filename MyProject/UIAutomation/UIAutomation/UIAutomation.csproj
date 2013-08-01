@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32BD234B-014D-47F0-8A95-A1D14D819A87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIAutomation</RootNamespace>
+    <AssemblyName>UIAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension.Firefox, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension.Silverlight, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\Host\TC_Host001.cs" />
+    <Compile Include="TestCases\Host\TC_Host002.cs" />
+    <Compile Include="TestCases\Host\TC_Host003.cs" />
+    <Compile Include="TestCases\Host\TC_Host004.cs" />
+    <Compile Include="TestCases\Host\TC_Host005.cs" />
+    <Compile Include="TestCases\Host\TC_Host006.cs" />
+    <Compile Include="TestCases\Host\TC_Host007.cs" />
+    <Compile Include="TestCases\Host\TC_Host008.cs" />
+    <Compile Include="TestCases\Host\TC_Host009.cs" />
+    <Compile Include="TestCases\Storage\TC_Storage001.cs" />
+    <Compile Include="UIMaps\AddClusterWizard.cs">
+      <DependentUpon>AddClusterWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddClusterWizard.Designer.cs">
+      <DependentUpon>AddClusterWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddHostWizard.cs">
+      <DependentUpon>AddHostWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddHostWizard.Designer.cs">
+      <DependentUpon>AddHostWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddSharePointFarmsWizard.cs">
+      <DependentUpon>AddSharePointFarmsWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddSharePointFarmsWizard.Designer.cs">
+      <DependentUpon>AddSharePointFarmsWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddStorageWizard.cs">
+      <DependentUpon>AddStorageWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\AddStorageWizard.Designer.cs">
+      <DependentUpon>AddStorageWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\ConnectDiskWizard.cs">
+      <DependentUpon>ConnectDiskWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\ConnectDiskWizard.Designer.cs">
+      <DependentUpon>ConnectDiskWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\CreateDiskWizard.cs">
+      <DependentUpon>CreateDiskWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\CreateDiskWizard.Designer.cs">
+      <DependentUpon>CreateDiskWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\CreateLUNWizard.cs">
+      <DependentUpon>CreateLUNWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\CreateLUNWizard.Designer.cs">
+      <DependentUpon>CreateLUNWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\CreateSharedFolderWizard.cs">
+      <DependentUpon>CreateSharedFolderWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\CreateSharedFolderWizard.Designer.cs">
+      <DependentUpon>CreateSharedFolderWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\MainWindow.cs">
+      <DependentUpon>MainWindow.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\MountSharedFolderWizard.cs">
+      <DependentUpon>MountSharedFolderWizard.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMaps\MountSharedFolderWizard.Designer.cs">
+      <DependentUpon>MountSharedFolderWizard.uitest</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataSources\" />
+    <Folder Include="Library\" />
+    <Folder Include="TestCases\CIFS\" />
+    <Folder Include="TestCases\Cluster\" />
+    <Folder Include="TestCases\LUN\" />
+    <Folder Include="TestCases\SharePoint\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UIMaps\AddClusterWizard.uitest" />
+    <None Include="UIMaps\AddHostWizard.uitest" />
+    <None Include="UIMaps\AddSharePointFarmsWizard.uitest" />
+    <None Include="UIMaps\AddStorageWizard.uitest" />
+    <None Include="UIMaps\ConnectDiskWizard.uitest" />
+    <None Include="UIMaps\CreateDiskWizard.uitest" />
+    <None Include="UIMaps\CreateLUNWizard.uitest" />
+    <None Include="UIMaps\CreateSharedFolderWizard.uitest" />
+    <None Include="UIMaps\MainWindow.uitest" />
+    <None Include="UIMaps\MountSharedFolderWizard.uitest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
