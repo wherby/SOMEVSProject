@@ -17,8 +17,11 @@ namespace AttributeTest
             PrintAuthorInfo(typeof(SecondClass));
             PrintAuthorInfo(typeof(ThirdClass));
             System.Console.WriteLine("new:");
-
+            baseClass b = new SecondClass();
+            baseClass c = new ThirdClass();
             a.SelfPrint();
+            b.SelfPrint();
+            c.SelfPrint();
         }
 
         private static void PrintAuthorInfo(System.Type t)
@@ -32,7 +35,6 @@ namespace AttributeTest
                 if (attr is Lock)
                 {
                     Lock a = (Lock)attr;
-                    a.SetName();
                     System.Console.WriteLine("   {0}, version {1:f}", a.GetName(), a.version);
                 }
             }
@@ -54,28 +56,28 @@ namespace AttributeTest
                 if (attr is Lock)
                 {
                     Lock a = (Lock)attr;
-                    a.SetName();
                     System.Console.WriteLine("   {0}, version {1:f}", a.GetName(), a.version);
+                    a.GetResource();
                 }
             }
         }
     }
 
 
-    [Lock("H. Ackerman"),Lock("M. Knott", version = 2.0)]
+    [Lock("M. Knott", version = 2.0)]
     public  class FirstClass:baseClass
     {
         // ...
     }
 
     // No Author attribute
-    public class SecondClass
+    public class SecondClass:baseClass
     {
         // ...
     }
 
-    [Lock("H. Ackerman"), Lock("M. Knott", version = 2.0)]
-    public class ThirdClass
+    [ Lock("M. Knott", version = 2.0)]
+    public class ThirdClass:baseClass
     {
         // ...
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.IO;
+using System.ServiceModel;
 
 namespace AttributeTest
 {
@@ -17,7 +18,6 @@ namespace AttributeTest
         string name;
         public double version;
 
-        private string[] list = new string[] { "aa", "bb", "cc" };
         Random rd = new Random((int)DateTime.Now.Ticks);
         public Lock(string name)
         {
@@ -30,16 +30,26 @@ namespace AttributeTest
             return name;
         }
 
-        public string SetName()
-        {
 
-            name=list[rd.Next(list.Length)];
-            return name;
-        }
+
 
         public void GetResource()
         {
+            WSHttpBinding bingding=new WSHttpBinding();
 
+            Uri url=new Uri("http://test-tao1:8732/ResourceSync/");
+
+            EndpointAddress address=new EndpointAddress(url);
+
+            ResourceClient client = new ResourceClient(bingding, address);
+
+
+            // Use the 'client' variable to call operations on the service.
+            bool result =client.GetResource(name);
+            Console.WriteLine("The resource {0} is {1}", name, result);
+            client.ReleaseResource(name);
+            // Always close the client.
+            client.Close();
         }
     }
 
