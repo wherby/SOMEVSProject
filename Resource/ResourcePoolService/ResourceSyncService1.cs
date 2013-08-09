@@ -35,7 +35,7 @@ namespace ResourcePoolService
             myHost = new ServiceHost(typeof(Service1));
 
             Uri address = new Uri("http://localhost:8732/ResourceSync/");
-            WSHttpBinding binding = new WSHttpBinding();
+            WSHttpBinding binding = new WSHttpBinding(SecurityMode.None);
 
             Type contract = typeof(IResource);
 
