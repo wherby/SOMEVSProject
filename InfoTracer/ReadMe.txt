@@ -1,0 +1,1 @@
+The InfoTracer is a tool for analyse the test log. More info see readme.doc

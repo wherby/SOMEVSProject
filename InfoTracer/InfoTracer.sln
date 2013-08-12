@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTracer", "InfoTracer\InfoTracer.csproj", "{81DF40BC-5852-4042-9FC7-31697562AF52}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.5.222.129:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = InfoTracer\\InfoTracer.csproj
+		SccProjectName1 = InfoTracer
+		SccLocalPath1 = InfoTracer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Debug|x86.ActiveCfg = Debug|x86
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Debug|x86.Build.0 = Debug|x86
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Release|x86.ActiveCfg = Release|x86
+		{81DF40BC-5852-4042-9FC7-31697562AF52}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
