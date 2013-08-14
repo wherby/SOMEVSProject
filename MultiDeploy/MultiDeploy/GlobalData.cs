@@ -15,8 +15,7 @@ namespace MultiDeploy
         public static string folderList = @"C:\Coverage
    C:\Local\pro1\CaseGenerator\CaseGenerator\Helper";
 
-        public static string splitterList = @"c:\local
-    c:\user";
+        public static string splitterList = @"C:\Local\PowerShellAutomation\PSAutomation2.1\Config\System.xml";
 
         public static string ROOTFOLDER = @"c:\MultiDeploy";
     }

@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 using System.IO;
 using System.Security.AccessControl;
+using System.Xml;
+using System.Xml.XPath;
 
 namespace MultiDeploy
 {
@@ -68,8 +70,11 @@ namespace MultiDeploy
 
                 }
             }
-            string splitString = GlobalData.splitterList;
-            string[] splitArray = Helper.StringSplit(splitString);
+
+            foreach (object splitTemp in SplitterConfigList.Items)
+            {
+                ProcessSplitterConfig(splitTemp.ToString());
+            }
             MessageBox.Show("Splitter finished");
         }
 
@@ -77,6 +82,27 @@ namespace MultiDeploy
         {
             string temp = Helper.RestoreSetting(SplitterConfigList);
             GlobalData.splitterList = temp;
+        }
+
+        private void ProcessSplitterConfig(string splitterFileName)
+        {
+            XmlDocument xmldoc = new XmlDocument();
+            xmldoc.Load(splitterFileName);
+
+            XmlNodeList nodeList = xmldoc.SelectNodes("//Exchange/test");
+            foreach (XmlNode temp in nodeList)
+            {
+                foreach (XmlNode temp2 in temp.ChildNodes)
+                {
+                    if (temp2.Attributes["Name"].Value == "Block")
+                    {
+                        temp2.Attributes["Value"].Value = "CIFS";
+                    }
+                }
+            }
+            XmlWriter wr = XmlWriter.Create(GlobalData.ROOTFOLDER + @"\test.xml");
+            xmldoc.Save(wr);
+            wr.Close();
         }
     }
 }
