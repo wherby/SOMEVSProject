@@ -72,6 +72,7 @@
             this.Controls.Add(this.AddFolder);
             this.Name = "SourceFolder";
             this.Text = "Source";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SourceFolder_FormClosing);
             this.Load += new System.EventHandler(this.SourceFolder_Load);
             this.ResumeLayout(false);
 

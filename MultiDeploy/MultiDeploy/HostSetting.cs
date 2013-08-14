@@ -36,5 +36,12 @@ namespace MultiDeploy
                 HostList.Items.Add(temp.Trim());
             }
         }
+
+        private void HostSetting_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string temp = null;
+            temp = Helper.RestoreSetting(HostList);
+            GlobalData.hostNameList = temp;
+        }
     }
 }

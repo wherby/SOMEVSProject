@@ -27,5 +27,12 @@ namespace MultiDeploy
             SourceFolder source = new SourceFolder();
             source.ShowDialog();
         }
+
+        private void splitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplitterConfigure split = new SplitterConfigure();
+            split.ShowDialog();
+        }
+
     }
 }

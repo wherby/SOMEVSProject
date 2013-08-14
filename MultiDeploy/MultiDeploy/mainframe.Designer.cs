@@ -103,6 +103,7 @@
             this.splitToolStripMenuItem.Name = "splitToolStripMenuItem";
             this.splitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.splitToolStripMenuItem.Text = "Split";
+            this.splitToolStripMenuItem.Click += new System.EventHandler(this.splitToolStripMenuItem_Click);
             // 
             // runnerToolStripMenuItem
             // 

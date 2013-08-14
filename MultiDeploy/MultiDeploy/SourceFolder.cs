@@ -39,5 +39,11 @@ namespace MultiDeploy
                 FolderList.Items.Add(temp.Trim());
             }
         }
+
+        private void SourceFolder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string temp = Helper.RestoreSetting(FolderList);
+            GlobalData.folderList = temp;
+        }
     }
 }

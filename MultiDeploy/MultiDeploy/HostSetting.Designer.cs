@@ -80,6 +80,7 @@
             this.Controls.Add(this.AddHost);
             this.Name = "HostSetting";
             this.Text = "Form2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HostSetting_FormClosing);
             this.Load += new System.EventHandler(this.HostSetting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
