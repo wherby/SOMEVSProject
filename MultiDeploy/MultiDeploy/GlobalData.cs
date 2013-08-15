@@ -9,13 +9,15 @@ namespace MultiDeploy
 {
     public static class GlobalData
     {
-        public static string hostNameList=@"11
-        22";
+        public static string hostNameList=@"test-tao1
+        srv-tao1
+test-sandy2";
 
-        public static string folderList = @"C:\Coverage
-   C:\Local\pro1\CaseGenerator\CaseGenerator\Helper";
+        public static string folderList = @"C:\Local\PowerShellAutomation\PSAutomation2.1\Config
+   C:\Local\pro1\CaseGenerator\CaseGenerator\Helper
+C:\Local\Temp";
 
-        public static string splitterList = @"C:\Local\PowerShellAutomation\PSAutomation2.1\Config\System.xml";
+        public static string splitterList = @"C:\Users\tes.xml";
 
         public static string ROOTFOLDER = @"c:\MultiDeploy";
     }

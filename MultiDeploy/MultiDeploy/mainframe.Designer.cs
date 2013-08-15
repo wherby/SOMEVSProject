@@ -87,21 +87,21 @@
             // hostSetToolStripMenuItem
             // 
             this.hostSetToolStripMenuItem.Name = "hostSetToolStripMenuItem";
-            this.hostSetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hostSetToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.hostSetToolStripMenuItem.Text = "HostSet";
             this.hostSetToolStripMenuItem.Click += new System.EventHandler(this.hostSetToolStripMenuItem_Click);
             // 
             // sourceFolderToolStripMenuItem
             // 
             this.sourceFolderToolStripMenuItem.Name = "sourceFolderToolStripMenuItem";
-            this.sourceFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sourceFolderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.sourceFolderToolStripMenuItem.Text = "SourceFolder";
             this.sourceFolderToolStripMenuItem.Click += new System.EventHandler(this.sourceFolderToolStripMenuItem_Click);
             // 
             // splitToolStripMenuItem
             // 
             this.splitToolStripMenuItem.Name = "splitToolStripMenuItem";
-            this.splitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.splitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.splitToolStripMenuItem.Text = "Split";
             this.splitToolStripMenuItem.Click += new System.EventHandler(this.splitToolStripMenuItem_Click);
             // 
@@ -110,11 +110,12 @@
             this.runnerToolStripMenuItem.Name = "runnerToolStripMenuItem";
             this.runnerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.runnerToolStripMenuItem.Text = "Runner";
+            this.runnerToolStripMenuItem.Click += new System.EventHandler(this.runnerToolStripMenuItem_Click);
             // 
             // mergerToolStripMenuItem
             // 
             this.mergerToolStripMenuItem.Name = "mergerToolStripMenuItem";
-            this.mergerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mergerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.mergerToolStripMenuItem.Text = "Merger";
             // 
             // scriptToolStripMenuItem
@@ -148,7 +149,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainframe";
-            this.Text = "Form1";
+            this.Text = "MultiDeploy";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

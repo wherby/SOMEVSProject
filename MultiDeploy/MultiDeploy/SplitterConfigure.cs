@@ -73,7 +73,7 @@ namespace MultiDeploy
 
             foreach (object splitTemp in SplitterConfigList.Items)
             {
-                ProcessSplitterConfig(splitTemp.ToString());
+                ParseSplitterConfigFile(splitTemp.ToString());
             }
             MessageBox.Show("Splitter finished");
         }
@@ -84,25 +84,117 @@ namespace MultiDeploy
             GlobalData.splitterList = temp;
         }
 
-        private void ProcessSplitterConfig(string splitterFileName)
+        private void ParseSplitterConfigFile(string splitterFileName)
         {
+            string hoststring = GlobalData.hostNameList;
+            string[] hostArray = Helper.StringSplit(hoststring);
             XmlDocument xmldoc = new XmlDocument();
             xmldoc.Load(splitterFileName);
+            ProcessChangeSplitter(hostArray, xmldoc);
+            ProcessReplaceSplitter(hostArray, xmldoc);
+            MoveToRemoteMachine(hostArray);
+        }
 
-            XmlNodeList nodeList = xmldoc.SelectNodes("//Exchange/test");
+        #region ChangeSplitter and replace splitter
+        private void ProcessChangeSplitter(string[] hostArray, XmlDocument xmldoc)
+        {
+
+            XmlNodeList nodeList = xmldoc.SelectNodes("//Change");
+
+            string rootFolder = GlobalData.ROOTFOLDER;
+
             foreach (XmlNode temp in nodeList)
             {
                 foreach (XmlNode temp2 in temp.ChildNodes)
                 {
-                    if (temp2.Attributes["Name"].Value == "Block")
+                    string fileName = temp2.Attributes["FileName"].Value;
+                    string xpath = temp2.Attributes["XPath"].Value;
+                    string key = temp2.Attributes["Key"].Value;
+                    string values = temp2.Attributes["Value"].Value;
+                    string[] valueArray = values.Split('#');
+                    int i = 0;
+                    foreach (string hostTemp in hostArray)
                     {
-                        temp2.Attributes["Value"].Value = "CIFS";
+                        string fileNameTemp = rootFolder + @"\" + hostArray[i % hostArray.Length] + @"\" + fileName;
+                        ProcessSplitterConfig(fileNameTemp, xpath, key, valueArray[i % hostArray.Length]);
+                        i++;
                     }
                 }
             }
-            XmlWriter wr = XmlWriter.Create(GlobalData.ROOTFOLDER + @"\test.xml");
+        }
+
+        private void ProcessSplitterConfig(string splitterFileName,string XPath,string key,string val)
+        {
+            XmlDocument xmldoc = new XmlDocument();
+            xmldoc.Load(splitterFileName);
+
+            XmlNodeList nodeList = xmldoc.SelectNodes(XPath);
+            foreach (XmlNode temp in nodeList)
+            {
+                foreach (XmlNode temp2 in temp.ChildNodes)
+                {
+                    if (temp2.Attributes["Name"].Value == key)
+                    {
+                        temp2.Attributes["Value"].Value =val;
+                    }
+                }
+            }
+            //FileInfo file = new FileInfo(splitterFileName);
+            //string fileName = file.Name;
+            XmlWriter wr = XmlWriter.Create(splitterFileName);
             xmldoc.Save(wr);
             wr.Close();
         }
+
+        private void ProcessReplaceSplitter(string[] hostArray, XmlNode xmldoc)
+        {
+            XmlNodeList nodeList = xmldoc.SelectNodes("//Replace");
+
+            string rootFolder = GlobalData.ROOTFOLDER;
+
+            foreach (XmlNode temp in nodeList)
+            {
+                foreach (XmlNode temp2 in temp.ChildNodes)
+                {
+                    string fileName = temp2.Attributes["FileName"].Value;
+                    string replaceCandidateString = temp2.Attributes["ReplaceCandidate"].Value;
+                    string[] replaceArray = replaceCandidateString.Split('#');
+                    int i = 0;
+                    foreach (string tempReplace in replaceArray)
+                    {
+                        string tempFilePath = rootFolder + @"\" + hostArray[i] + @"\";
+                        FileInfo tempFile = new FileInfo(tempFilePath + replaceArray[i]);
+                        if (File.Exists(tempFilePath + fileName) && File.Exists(tempFilePath + replaceArray[i]))
+                        {
+                            tempFile.Replace(tempFilePath + fileName, "aaa.bak");
+                        }
+                        i++;
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        private void MoveToRemoteMachine(string[] hostArray)
+        {
+
+            string rootFolder = GlobalData.ROOTFOLDER;
+            foreach (string hosttemp in hostArray)
+            {
+                string tempRoot = @"\\" + hosttemp + @"\c$\Deploy";
+                DirectoryInfo dir = new DirectoryInfo(tempRoot);
+                if (dir.Exists)
+                {
+                    Helper.ForceDeleteDirectory(tempRoot);
+                }
+                dir.Create();
+                string source = rootFolder + @"\" + hosttemp;
+                DirectoryInfo sourceDir = new DirectoryInfo(source);
+                Helper.CopyTo(sourceDir, tempRoot, true);
+            }
+
+        }
+
     }
 }

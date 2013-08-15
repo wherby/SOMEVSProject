@@ -34,5 +34,19 @@ namespace MultiDeploy
             split.ShowDialog();
         }
 
+        private void runnerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string hoststring = GlobalData.hostNameList;
+            string[] hostArray = Helper.StringSplit(hoststring);
+            foreach (string hosttemp in hostArray)
+            {
+                string tempRoot = @"\\" + hosttemp + @"\c$\Deploy";
+                string cmd = tempRoot + @"\test.bat";
+      
+            }
+        }
+
+
+
     }
 }
