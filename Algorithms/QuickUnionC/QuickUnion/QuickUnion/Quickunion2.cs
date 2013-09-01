@@ -46,7 +46,7 @@ namespace QuickUnion
         {
             unionClass i = root(p);
             unionClass j = root(q);
-            if (i.count > j.count)
+            if (i.count >= j.count)
             {
                 j.id = i.id;
                 i.count = i.count + j.count;
@@ -63,6 +63,21 @@ namespace QuickUnion
             {
                 Console.WriteLine(string.Format("{0} and id {1}and weight {2}", i, id[i].id,id[i].count));
             }
+        }
+
+        public void test2()
+        {
+            //string input = "0-2";
+            string input = "6-5 3-9 5-2 4-8 4-9 5-0 5-9 7-5 2-1";
+            string[] pairs = input.Split(' ');
+            foreach (string temp in pairs)
+            {
+                string[] pair = temp.Split('-');
+                int a = int.Parse(pair[0]);
+                int b = int.Parse(pair[1]);
+                union(a, b);
+            }
+            test();
         }
     }
 }
