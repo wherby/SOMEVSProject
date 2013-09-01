@@ -8,50 +8,21 @@ namespace QuickUnion
     {
         static void Main(string[] args)
         {
-            QuickUnionUF qu = new QuickUnionUF(10);
-            qu.union(7, 8);
+            QuickUnionUF3 qu = new QuickUnionUF3(10);
+            qu.union(1, 2);
+            qu.union(1, 7);
+            qu.union(1, 0);
+            qu.union(8, 3);
             qu.union(8, 9);
+            qu.union(3, 4);
+            qu.union(0, 5);
+            qu.union(5, 6);
+            qu.union(8, 1);
             qu.test();
             Console.ReadLine();
         }
     }
+    #region quickunion simple
 
-    public class QuickUnionUF
-    {
-       private int [] id;
-
-        public QuickUnionUF(int N)
-       {
-        id=new int[N];
-        for(int i=0;i<N;i++)id[i]=i;
-       }
-       
-       private int root(int i)
-       {
-		  while(i!=id[i])
-           {
-               i=id[i];
-           }
-		  return i;
-       }
-       
-       public bool connnected(int p, int q)
-       {
- 	  	  return root(p)==root(q);
-	   }
-		  
-	   public void union(int p,int q)
-	    {
- 		    int i=root(p);
- 			int j=root(q);
- 			id[i]=j;
-		}
-        public void test()
-        {
-            for(int i=0;i<id.Length;i++)
-            {
-                Console.WriteLine(string.Format("{0} and id {1}",i, id[i]));
-            }
-        }
-    }
+    #endregion 
 }
