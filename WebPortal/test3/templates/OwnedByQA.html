@@ -1,0 +1,153 @@
+$def with(product, test)
+
+<html>
+<head>
+	<title>Open Bug Status</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+	<style type="text/css">
+<!--
+  .emc{font-size: 18px;font-weight: 50;color: #3C3C3C;font-family: Arial;}
+  
+body {text-align:left}
+#outer {
+ width:100%;
+ background:#ffffcc;
+ margin:auto;
+ text-align:center;
+}
+.inner {
+ width:350px;
+ height:300px;
+ margin:3px; 
+ border:0px solid #666;
+}
+* html .inner {display:inline}
+html>body #outer {display:table}
+html>body .inner {display:table;float:left}
+@media all and (min-width: 0px){
+html>body .inner {display:inline-block;float:none;}
+}
+
+.groovybutton
+{
+   background-color:#0080C0;
+   border-color:#66CCFF;
+   border-width:3px;
+} 
+
+-->
+</style>
+</head>
+
+
+<script type="text/javascript"> 
+  
+  var itemPerPage = 25;
+function addOption(selectbox,text,value )
+{var optn = document.createElement("OPTION");
+optn.text = text;
+optn.value = value;
+selectbox.options.add(optn);
+}
+
+function LoadRelease(index)
+{
+	var selectBox = document.getElementsByName("release")[0];
+	selectBox.options.length=0;
+	if (index == "0")  //ESI
+	{
+		addOption(selectBox, "ESI 2.0", "0");
+		addOption(selectBox, "ESI 2.1", "1");
+	}
+	else //VSI
+	{
+		addOption(selectBox, "VSI 5.5", "0");
+		addOption(selectBox, "VSI 5.6", "1");
+	}
+}
+
+function LoadPage()
+{
+	if("$product" != "")
+	{
+	 	document.getElementsByName("product")[0].value="$product";
+	}
+	ShowPage(1);
+}
+
+function ShowPage(page)
+{
+	var tab = document.getElementById("table");
+	if(tab == null)
+	{
+		return
+	}
+	var len = tab.rows.length;
+	var totalPage = parseInt((len - 2 + 4) / itemPerPage);
+	tab.rows[0].style.background = "#0080C0";
+	for(var i = 1; i < len -1; i++)
+	{
+		if(i <= (page-1)*itemPerPage || i > page*itemPerPage)
+		{
+			tab.rows[i].style.display = "none";
+		}
+		else
+		{
+			tab.rows[i].style.display = "";
+			tab.rows[i].style.background = "#99CCFF";
+		}
+	}
+	document.getElementById("hidden").value = page;
+	if(totalPage == 0)
+	{
+		page = 0;
+	}
+	document.getElementById("label").innerText = page + "/" + totalPage;
+}
+
+function ChangePage(next)
+{
+	var len = document.getElementById("table").rows.length;
+	var totalPage = parseInt((len - 2 + 4) / itemPerPage);
+	var currentPage = document.getElementById("hidden").value;
+	if(next == "1")
+	{
+		currentPage++;
+	}
+	else
+	{
+		currentPage--;
+	}
+	if(currentPage >= 1 && currentPage <= totalPage)
+	{
+		ShowPage(currentPage);
+	}
+}
+</script>
+
+<body onload="LoadPage()">
+
+<table style="padding: 0px;" id="artifactSummary">
+<tr><td style="padding-top:8px">
+<form name="BugStatusForm" method="post"  id="BugStatusForm">
+<table id="two" width="100%">
+<tr><td width="130" class="emc">Product</td>
+<td><select name="product" class="inputfield">
+<option value="0">EMC Storage Integrator</option>
+<option value="1">VSI Storage Viewer</option></select></td>
+<td width=20></td>
+<td><button name="submit" type="submit">Query</button></td>
+</tr>
+<tr height="15"></tr>
+</table>
+</form></td>
+<td width=100></td>
+<td>
+</table>
+
+$:test
+
+
+</body>
+
+  </html>

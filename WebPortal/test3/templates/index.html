@@ -1,0 +1,41 @@
+$def with(form, errormsg, imgurl)
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>ESI DASHBOARD</title>
+</head>
+<body>
+<h1>Bug Status</h1>
+<table>
+<tr>
+<th>
+By Week (from 07/01/2012)
+</th>
+<th>
+By Day (last 2 week)
+</th>
+</tr>
+<tr>
+<td>
+<a href="/static/bug_trend_by_week.png"><img border="0" src="/static/bug_trend_by_week.png" width="300" height="200" /></a>
+</td>
+<td>
+<a href="/static/bug_trend_by_day.png"><img border="0" src="/static/bug_trend_by_day.png" width="300" height="200" /></a>
+</td>
+</tr>
+</table>
+<br/>
+
+<form name="main" method="post">
+$:form.render()
+<input type="submit" />
+</form>
+<br/>
+
+$if not errormsg:
+  $if imgurl: <img src="$:imgurl" />
+$else:
+  $errormsg
+</body>
+</html>
