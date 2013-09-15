@@ -1,0 +1,45 @@
+[General]
+MenuName=button
+[Main Colors]
+MainBG=16777215
+MainMOBG=16777215
+MainFont=0
+MainFontMO=0
+MainBorder=12615680
+[Sub Colors]
+SubBG=6697728
+SubMOBG=15244288
+SubFont=16777215
+SubFontMO=0
+SubBorder=0
+[Options]
+MenuType=1
+TextAlign=1
+TextAlignSub=0
+MenuTop=0
+MenuLeft=1
+LeftPadding=15
+TopPadding=0
+BorderWidth=2
+UseFixedWidth=1
+ItemWidth=1000
+MenuFont=Tahoma, Verdana, Arial
+FontSize=25
+FontBold=0
+FontItalic=0
+FancyHover=0
+[Menus]
+MenuCount=2
+Menu_0=Menu1
+Menu_1=Menu2
+[MenuData]
+MenuName_0=Menu1
+MenuText_0=Sandy
+MenuLink_0=
+MenuHeight0=20
+MenuWidth0=80
+MenuName_1=Menu2
+MenuText_1=Untitled2
+MenuLink_1=http://
+MenuHeight1=20
+MenuWidth1=80

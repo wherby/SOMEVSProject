@@ -1,0 +1,19 @@
+$def with(page)
+<html>
+<head>
+<title>Frameset Example Title (Replace this section with your own title)</title>
+      <link rel="stylesheet" type="text/css" href="css/menu-menu.css" media="screen">
+
+</head>
+
+<frameset rows="110,*" border="0">
+    <frame name="top" marginwidth="10" marginheight="10" scrolling="auto" frameborder="0" src="static/src/title.html" noresize>
+        <frameset cols="192,*" border="0">
+        <frame name="navigator" src="static/src/Navigator.html" marginwidth="0" marginheight="10" scrolling="auto" frameborder="0" noresize>
+        <frame name="main" src=$:page marginwidth="100" marginheight="50" scrolling="auto" frameborder="0" noresize>
+    </frameset>
+</frameset>
+</html>
+<ul class="menu-menu">
+  <li class="first"><a href="http://">Sandy</a></li>
+</ul>

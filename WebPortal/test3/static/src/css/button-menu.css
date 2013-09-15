@@ -1,0 +1,183 @@
+/*** ESSENTIAL STYLES ***/
+.button-menu, .button-menu * {
+   margin:0;
+   padding:0;
+   list-style:none;
+}
+.button-menu {
+   margin:0px 0 0 1px; /* top right bottom left */
+   line-height:1.0;
+}
+.button-menu ul {
+   position:absolute;
+   top:-999em;
+   width:1000px; /* submenu item width - offest below must match */
+}
+.button-menu li {
+   width:1000px; /* Default to 'auto'. If specified, the submenu item width and offset must match */
+}
+.button-menu li a {
+   text-align:center;
+}
+.button-menu li li a {
+   text-align:left;
+}
+.button-menu ul li {
+   width:100%;
+}
+.button-menu li ul  {
+   display:none;
+}
+.button-menu li:hover ul  {
+   display:block;
+}
+.button-menu li li ul  {
+   display:none;
+}
+.button-menu li:hover li:hover ul  {
+   display:block;
+}
+.button-menu li:hover {
+   visibility:inherit; /* fixes IE7 'sticky bug' */
+}
+.button-menu li {
+   float:left;
+   position:relative;
+}
+.button-menu a {
+   display:block;
+   position:relative;
+}
+.button-menu li:hover ul,
+.button-menu li.sfHover ul {
+   left:0;
+   top:25px; /* match top ul list item height */
+   z-index:2;
+}
+ul.button-menu li:hover li ul,
+ul.button-menu li.sfHover li ul {
+   top:-999em;
+}
+ul.button-menu li li:hover ul,
+ul.button-menu li li.sfHover ul {
+   left:1000px; /* submenu offest - must match ul width above */
+   top:0;
+}
+ul.button-menu li li:hover li ul,
+ul.button-menu li li.sfHover li ul {
+   top:-999em;
+}
+ul.button-menu li li li:hover ul,
+ul.button-menu li li li.sfHover ul {
+   left:1000px; /* submenu offest - must match ul width above */
+   top:0;
+}
+
+/*** DEMO SKIN ***/
+.button-menu {
+   float:left;
+   margin-bottom:0em;
+	font-family:Tahoma, Verdana, Arial;
+	font-size:25px; 
+	font-weight:normal;   /* bold or normal */
+	font-style:normal; /* italic or normal */
+}
+.button-menu a {
+   border-right:2px solid #0080C0;
+   border-top:2px solid #0080C0;
+   border-bottom:2px solid #0080C0;
+   padding:0px 15px;
+   text-decoration:none;
+}
+.button-menu li.first a { 
+    border-left:2px solid #0080C0;
+    }
+.button-menu a, .button-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+   color:#000000;
+}
+.button-menu a:hover, .button-menu a:active  { /* visited pseudo selector so IE6 applies text colour*/
+   color:#000000;
+}
+
+.button-menu li li a { 
+    border:2px solid #0080C0; border-top-width:0; 
+    }
+.button-menu li li li.first a { 
+    border:2px solid #0080C0; 
+    }
+.button-menu li {
+   background:#FFFFFF;
+}
+.button-menu li li {
+   background:#003366;
+}
+.button-menu li li li {
+   background:#003366;
+}
+.button-menu li:hover, .button-menu li.sfHover,
+.button-menu a:focus, .button-menu a:hover, .button-menu a:active {
+   background:#FFFFFF;
+   outline:0;
+}
+
+.button-menu li li a, .button-menu li li a:visited { 
+    color:#000000;
+}
+
+.button-menu li li a:hover, .button-menu li li a:active, .button-menu li li a:focus { 
+  color: #000000;
+} 
+
+/*** arrows **/
+.button-menu a.sf-with-ul {
+   padding-right:2.25em;
+   min-width:1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+   position:absolute;
+   display:block;
+   right:.75em;
+   top:1.05em; /* IE6 only */
+   width:10px;
+   height:10px;
+   text-indent:-999em;
+   overflow:hidden;
+   background:url('../images/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+   top:.8em;
+   background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+   background-position:-10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.button-menu ul .sf-sub-indicator { background-position:-10px 0; }
+.button-menu ul a > .sf-sub-indicator { background-position:0 0; }
+/* apply hovers to modern browsers */
+.button-menu ul a:focus > .sf-sub-indicator,
+.button-menu ul a:hover > .sf-sub-indicator,
+.button-menu ul a:active > .sf-sub-indicator,
+.button-menu ul li:hover > a > .sf-sub-indicator,
+.button-menu ul li.sfHover > a > .sf-sub-indicator {
+   background-position:-10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+   background:url('../images/shadow.png') no-repeat bottom right;
+   padding:0 8px 9px 0;
+   -moz-border-radius-bottomleft:17px;
+   -moz-border-radius-topright:17px;
+   -webkit-border-top-right-radius:17px;
+   -webkit-border-bottom-left-radius:17px;
+}
+.sf-shadow ul.sf-shadow-off {
+   background:transparent;
+}

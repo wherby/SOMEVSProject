@@ -1,0 +1,87 @@
+.tooltip {
+	Z-INDEX: 10000 !important; POSITION: absolute !important; FONT-SIZE: 12px; OVERFLOW: hidden
+}
+.tooltip .xtop {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; FONT-SIZE: 1px
+}
+.tooltip .xbottom {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; FONT-SIZE: 1px
+}
+.tooltip .xb1 {
+	DISPLAY: block; OVERFLOW: hidden
+}
+.tooltip .xb2 {
+	DISPLAY: block; OVERFLOW: hidden
+}
+.tooltip .xb3 {
+	DISPLAY: block; OVERFLOW: hidden
+}
+.tooltip .xb4 {
+	DISPLAY: block; OVERFLOW: hidden
+}
+.tooltip .xb1 {
+	HEIGHT: 1px
+}
+.tooltip .xb2 {
+	HEIGHT: 1px
+}
+.tooltip .xb3 {
+	HEIGHT: 1px
+}
+.tooltip .xb2 {
+	BORDER-LEFT: #333 1px solid; BACKGROUND: #666; BORDER-RIGHT: #333 1px solid
+}
+.tooltip .xb3 {
+	BORDER-LEFT: #333 1px solid; BACKGROUND: #666; BORDER-RIGHT: #333 1px solid
+}
+.tooltip .xb4 {
+	BORDER-LEFT: #333 1px solid; BACKGROUND: #666; BORDER-RIGHT: #333 1px solid
+}
+.tooltip .xbottom .xb2 {
+	BACKGROUND: #666
+}
+.tooltip .xbottom .xb3 {
+	BACKGROUND: #666
+}
+.tooltip .xbottom .xb4 {
+	BACKGROUND: #666
+}
+.tooltip .xb1 {
+	MARGIN: 0px 5px; BACKGROUND: #333
+}
+.tooltip .xb2 {
+	BORDER-RIGHT-WIDTH: 2px; MARGIN: 0px 3px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 2px
+}
+.tooltip .xb3 {
+	MARGIN: 0px 2px
+}
+.tooltip .xb4 {
+	MARGIN: 0px 1px; HEIGHT: 2px
+}
+.tooltip .xarrow {
+	POSITION: relative; WIDTH: 11px; HEIGHT: 7px; TOP: 2px; LEFT: 12px
+}
+.tooltip .xarrow B {
+	BORDER-LEFT: #333 1px solid; DISPLAY: block; BACKGROUND: #666; HEIGHT: 1px; FONT-SIZE: 1px; BORDER-RIGHT: #333 1px solid
+}
+.tooltip .xarrow .a1 {
+	BORDER-BOTTOM: 0px solid; BORDER-LEFT: 0px solid; BACKGROUND-COLOR: #333; MARGIN: 0px 5px; WIDTH: 1px; BORDER-TOP: 0px solid; BORDER-RIGHT: 0px solid
+}
+.tooltip .xarrow .a2 {
+	MARGIN: 0px 4px; WIDTH: 1px
+}
+.tooltip .xarrow .a3 {
+	MARGIN: 0px 3px; WIDTH: 3px
+}
+.tooltip .xarrow .a4 {
+	MARGIN: 0px 2px; WIDTH: 5px
+}
+.tooltip .xarrow .a5 {
+	MARGIN: 0px 1px; WIDTH: 7px
+}
+.tooltip .xarrow .a6 {
+	MARGIN: 0px; WIDTH: 9px
+}
+.tooltip .xboxcontent {
+	BORDER-BOTTOM: #333 0px solid; BORDER-LEFT: #333 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #666; MARGIN: 0px; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; WORD-WRAP: break-word; COLOR: #000; BORDER-TOP: #333 0px solid; BORDER-RIGHT: #333 1px solid; PADDING-TOP: 0px; text-shadow: 1px 1px 0px #CCC
+}

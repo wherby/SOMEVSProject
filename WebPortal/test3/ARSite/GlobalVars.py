@@ -1,0 +1,5 @@
+ARList=[]
+ARAudit=[]
+ARBackup=[]
+STATUSLIST=["Returned to submitter","Test Me","To be reproduced","As Designed"]
+SHQA=["liping yu","Sandy","tao zhou"]
