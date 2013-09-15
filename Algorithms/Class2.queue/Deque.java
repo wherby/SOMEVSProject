@@ -1,8 +1,9 @@
 import java.util.Iterator;
+import java.util.*;
 public class Deque<Item> implements Iterable<Item> 
 {
-    private Node first=null;
-    private Node last=null;
+    private Node first = null;
+    private Node last = null;
     private int num;
     
     private class Node
@@ -14,9 +15,9 @@ public class Deque<Item> implements Iterable<Item>
     
     public Deque()
     {
-        num=0;
-        first=null;
-        last=null;
+        num = 0;
+        first = null;
+        last = null;
     }
     
     public boolean isEmpty()
@@ -31,57 +32,65 @@ public class Deque<Item> implements Iterable<Item>
     
     public void addFirst(Item item)
     {
+        if (item == null)
+        {
+            throw new NullPointerException();
+        }
         Node oldfirst = first;
         first = new Node();
         first.item = item;
         first.next = oldfirst;
         first.previous = null;
-        if(oldfirst != null)
+        if (oldfirst != null)
         {
             oldfirst.previous = first;
         }
         else
         {
-            last=first;
+            last = first;
         }
         num++;
     }
     
     public void addLast(Item item)
     {
+        if (item == null)
+        {
+            throw new NullPointerException();
+        }
         Node oldlast = last;
         last = new Node();
         last.item = item;
-        last.previous=oldlast;
-        last.next=null;
-        if(oldlast != null)
+        last.previous = oldlast;
+        last.next = null;
+        if (oldlast != null)
         {
             oldlast.next = last;
         }
         else
         {
-            first=last;
+            first = last;
         }
         num++;
     }
     
     public Item removeFirst()
     {
-        if(first == null)
+        if (first == null)
         {
-             throw new IndexOutOfBoundsException();
+             throw new NoSuchElementException();
         }
         else
         {
-            Node oldfirst=first;
-            first=first.next;
-            if(first!=null)
+            Node oldfirst = first;
+            first = first.next;
+            if(first != null)
             {
-                first.previous=null;
+                first.previous = null;
             }
             else
             {
-                last=null;
+                last = null;
             }
             num--;
             return oldfirst.item;
@@ -92,19 +101,19 @@ public class Deque<Item> implements Iterable<Item>
     {
         if(last == null)
         {
-             throw new IndexOutOfBoundsException();
+             throw new NoSuchElementException();
         }
         else
         {
-            Node oldlast=last;
-            last=last.previous;
-            if(last!=null)
+            Node oldlast = last;
+            last = last.previous;
+            if(last != null)
             {
-                last.next=null;
+                last.next = null;
             }
             else
             {
-                first=null;
+                first = null;
             }
             num--;
             return oldlast.item;
@@ -118,19 +127,25 @@ public class Deque<Item> implements Iterable<Item>
     
     private class ListIterator implements Iterator<Item>
     {
-        private Node current=first;
+        private Node current = first;
         public boolean hasNext()
         {
             return current != null;
         }
+        
         public void remove()
         {
+            throw new UnsupportedOperationException ();
         }
         
         public Item next()
         {
-            Item item=current.item;
-            current=current.next;
+            if(current==null)
+            {
+                throw new NoSuchElementException();
+            }
+            Item item = current.item;
+            current = current.next;
             return item;
         }
     }
