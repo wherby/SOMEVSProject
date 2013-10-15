@@ -1,0 +1,25 @@
+>>> 1/4*n*s*s/(cmath.tan(cmath.pi/n))
+0j
+>>> n
+5
+>>> (cmath.tan(cmath.pi/n))
+(0.7265425280053609+0j)
+>>>  1/4*n*s*s
+ 
+  File "<pyshell#26>", line 1
+    1/4*n*s*s
+   ^
+IndentationError: unexpected indent
+>>> 1/4*n*s*s/
+SyntaxError: invalid syntax
+>>> 1/4*n*s*s
+0
+>>> s
+7
+>>> n
+5
+>>> 1/4
+0
+>>> 1.0/4*n*s*s/(cmath.tan(cmath.pi/n))
+(84.30339262885938+0j)
+
