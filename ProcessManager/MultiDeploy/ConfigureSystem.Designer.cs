@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigureSystem));
             this.EditSystem = new System.Windows.Forms.Button();
             this.EditSystemConfig = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             this.ClientSize = new System.Drawing.Size(546, 273);
             this.Controls.Add(this.EditSystemConfig);
             this.Controls.Add(this.EditSystem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfigureSystem";
             this.Text = "ConfigureSystem";
             this.Load += new System.EventHandler(this.ConfigureSystem_Load);

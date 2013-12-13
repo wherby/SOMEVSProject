@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostConfig));
             this.folderBrowserDialogPost = new System.Windows.Forms.FolderBrowserDialog();
             this.Addpost = new System.Windows.Forms.Button();
             this.RemovePost = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.PostConfigFolder);
             this.Controls.Add(this.RemovePost);
             this.Controls.Add(this.Addpost);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PostConfig";
             this.Text = "PostConfig";
             this.Load += new System.EventHandler(this.PostConfig_Load);

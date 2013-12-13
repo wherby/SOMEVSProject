@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Runner));
             this.Run = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.PreScriptFile = new System.Windows.Forms.CheckedListBox();
@@ -149,6 +150,7 @@
             this.Controls.Add(this.PreScriptFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Run);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Runner";
             this.Text = "Runner";
             this.Load += new System.EventHandler(this.Runner_Load);

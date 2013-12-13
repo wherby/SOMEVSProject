@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SourceFolder));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.AddFolder = new System.Windows.Forms.Button();
             this.RemoveFolder = new System.Windows.Forms.Button();
@@ -103,6 +104,7 @@
             this.Controls.Add(this.FolderList);
             this.Controls.Add(this.RemoveFolder);
             this.Controls.Add(this.AddFolder);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SourceFolder";
             this.Text = "Source";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SourceFolder_FormClosing);

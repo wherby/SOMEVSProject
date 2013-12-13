@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreConfig));
             this.Addprefix = new System.Windows.Forms.Button();
             this.Removeprefix = new System.Windows.Forms.Button();
             this.PrefixConfigFolder = new System.Windows.Forms.CheckedListBox();
@@ -81,6 +82,7 @@
             this.Controls.Add(this.PrefixConfigFolder);
             this.Controls.Add(this.Removeprefix);
             this.Controls.Add(this.Addprefix);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PreConfig";
             this.Text = "PreConfig";
             this.Load += new System.EventHandler(this.PreConfig_Load);

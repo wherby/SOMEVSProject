@@ -130,7 +130,7 @@ namespace ProcessManager
 
         private void mainframe_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Helper.KillProcess("ProcessManager");
+          //  Helper.KillProcess("ProcessManager");
         }
 
 
