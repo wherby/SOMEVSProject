@@ -25,7 +25,7 @@ assert(find(lst,9,7,0)==6)
 assert(find(lst,9,10,0)==-1)
 print "Every thing seems OK"
 
-print find(lst,9,9,0)
+assert(find(lst,9,9,0)==8)
 
 
 
