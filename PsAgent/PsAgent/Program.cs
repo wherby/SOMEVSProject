@@ -41,8 +41,16 @@ namespace PsAgent
                     }
                     string[] allPSString = File.ReadAllLines(args[0+offset]);
                     cmdList.AddRange(allPSString);
-
+                    var Con = Console.Error;
+                    var Con1 = Console.Out;
+                    TextWriter NullWriter=TextWriter.Null;
+                    Console.SetError(NullWriter);
+                    Console.SetOut(NullWriter);
+                    //Console.Error = NullWriter;
+                   
                     string result = psMachine.RunScript(cmdList, new List<PSParam>() { }).OutStr.Trim();
+                    Console.SetError(Con);
+                    Console.SetOut(Con1);
                     Console.WriteLine(result);
                 }
                 catch(Exception ex)

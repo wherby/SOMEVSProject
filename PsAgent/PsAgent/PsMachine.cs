@@ -13,7 +13,7 @@ namespace PsAgent
     {
         public static void LogInfo(string info)
         {
-#if Debug
+#if Debug1
             Console.WriteLine(info);
 #endif
         }
@@ -158,7 +158,7 @@ namespace PsAgent
 
                         string detail = string.Format("The script: {0} occurs ERROR \r\n [Error InFO]: {1}", script, stringBuilder.ToString());
                         PSException psEx = new PSException(detail);
-                        throw psEx;
+                       // throw psEx;
                     }
                 }
             }

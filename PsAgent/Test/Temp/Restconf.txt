@@ -1,0 +1,4 @@
+$ip="10.110.42.112"
+$user="service"
+$pass="Mi@Dim7T"
+$method="get perpetual_stats"

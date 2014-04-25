@@ -1,0 +1,2 @@
+$user="pie\tao"
+$pass="tao"
