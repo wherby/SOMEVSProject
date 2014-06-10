@@ -1,0 +1,3 @@
+Add-PSSnapin VMware.VimAutomation.Core
+Connect-VIServer -Server 10.110.44.24 -User $user -Password $pass
+Get-VM

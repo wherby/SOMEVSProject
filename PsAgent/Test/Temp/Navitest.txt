@@ -1,0 +1,2 @@
+$a=naviseccli -h $h -user $user -password $pass -Scope global getdisk -state -capacity -drivetype -rg
+$a[0]
