@@ -16,17 +16,20 @@ class ReadFile:
     def splitToHand(self):
         temp="";
         count=0;
+        num=0;
         for line in self.allLines:
             count=count+1
             if count==1:
                 print "Line 1:"+line;
-            if line.strip()=="":
+            if line.strip()=="" and temp!="":
+                num=num+1;
                 self.hands.append(temp);
-                temp='';
+                #print num;
+                #print temp;
+                temp="";
             else:
-                
                 if temp=="":
-                    temp=line
+                    temp=line.strip()
                 else:
                     temp=temp+line
                 
@@ -34,19 +37,20 @@ class ReadFile:
         return self.hands
     
     def __str__(self):
-        return self.hands[0];
+        return self.hands[1];
 
 
 class Hand:
     def __init__(self,lines):
         self.lines=lines.splitlines(True);
         self.heros=[]
-        #print lines;
+        print lines;
 
     def getNumber(self):
         m = re.match(r'(.*)(Hand #)(\d*)(:)(.*)', self.lines[0])
         #print "m.group(1,2):", m.group(3)
-        self.ID=m.group(3)
+        if m!=None:
+            self.ID=m.group(3)
 
     def getHeros(self):
         for line in self.lines:
@@ -68,7 +72,8 @@ if __name__=="__main__":
     temp.splitToHand();
     print temp
     hands=temp.getHands();
-    a=Hand(hands[0])
+    print hands[1];
+    a=Hand(hands[1])
     a.getNumber();
     a.getHeros();
     print a;
