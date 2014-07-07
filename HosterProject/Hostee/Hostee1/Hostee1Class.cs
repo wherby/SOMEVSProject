@@ -6,10 +6,7 @@ using HosteeBase;
 
 namespace Hostee1
 {
-    class Hostee1Class
-    {
 
-    }
 
     [Serializable]
     public class Hostee1 : BaseHostee
@@ -40,7 +37,7 @@ namespace Hostee1
         {
             Li.Add("A");
             Li.Add("B");
-
+            
         }
     }
 }

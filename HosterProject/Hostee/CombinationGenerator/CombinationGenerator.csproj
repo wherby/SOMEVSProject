@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD79A9C8-087F-4987-86D9-2BDE025E25FC}</ProjectGuid>
+    <ProjectGuid>{21EF32A1-A157-45BF-9B34-A4BE9B45163E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HostMan</RootNamespace>
-    <AssemblyName>HostMan</AssemblyName>
+    <RootNamespace>CombinationGenerator</RootNamespace>
+    <AssemblyName>CombinationGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DomainFile">
+      <HintPath>..\..\HostMan\DomainFileIO\bin\Debug\DomainFile.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,18 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hoster.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="CombinationGeneratorClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DomainFileIO\DomainFile.csproj">
-      <Project>{1216F746-3304-40E4-A011-C5F5F35EE013}</Project>
-      <Name>DomainFile</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyException\MyException.csproj">
-      <Project>{749FF222-08CA-40F9-B010-0949964D5C14}</Project>
-      <Name>MyException</Name>
+    <Content Include="CombinationGenerator.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hostee\Hostee.csproj">
+      <Project>{D7E220C6-FA83-4DB9-B4A8-C3731A2DE5BE}</Project>
+      <Name>Hostee</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

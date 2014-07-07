@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD79A9C8-087F-4987-86D9-2BDE025E25FC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{1216F746-3304-40E4-A011-C5F5F35EE013}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HostMan</RootNamespace>
-    <AssemblyName>HostMan</AssemblyName>
+    <RootNamespace>DomainFile</RootNamespace>
+    <AssemblyName>DomainFile</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,19 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hoster.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="DomainFileIO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DomainFileIO\DomainFile.csproj">
-      <Project>{1216F746-3304-40E4-A011-C5F5F35EE013}</Project>
-      <Name>DomainFile</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyException\MyException.csproj">
-      <Project>{749FF222-08CA-40F9-B010-0949964D5C14}</Project>
-      <Name>MyException</Name>
-    </ProjectReference>
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

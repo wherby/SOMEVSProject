@@ -56,12 +56,10 @@ namespace Hostee
              Console.WriteLine("{0}+{1}={2}", a1, b1, a1 + b1);
          }
 
-         public  List<string> Init()
+         public override  void Init()
          {
-             List<string> li = new List<string>();
-             li.Add("a");
-             li.Add("b");
-             return li;
+             Li.Add("A");
+             Li.Add("B");
          }
     }
 

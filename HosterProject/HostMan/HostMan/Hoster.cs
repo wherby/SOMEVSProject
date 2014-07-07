@@ -4,16 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Reflection;
+using MyException;
 
 namespace HostMan
 {
-    class MyException : System.Exception
-    {
-        public MyException(string Msg)
-        {
-            new Exception(Msg);
-        }
-    }
+
 
 
     class Hoster
@@ -89,7 +84,7 @@ namespace HostMan
             MethodInfo method = SearchMethod(allMethod, methodName);
             if (method == null)
             {
-                throw new MyException("Method not found");
+                throw new MyExceptionClass("Method not found");
             }
 
             method.Invoke(wraper, new object[] { });

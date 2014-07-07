@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostee", "Hostee\Hostee.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostee1", "Hostee1\Hostee1.csproj", "{3060D397-46AB-4084-BB62-5EA0E103B5D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationGenerator", "CombinationGenerator\CombinationGenerator.csproj", "{21EF32A1-A157-45BF-9B34-A4BE9B45163E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{3060D397-46AB-4084-BB62-5EA0E103B5D2}.Debug|x86.Build.0 = Debug|x86
 		{3060D397-46AB-4084-BB62-5EA0E103B5D2}.Release|x86.ActiveCfg = Release|x86
 		{3060D397-46AB-4084-BB62-5EA0E103B5D2}.Release|x86.Build.0 = Release|x86
+		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Debug|x86.ActiveCfg = Debug|x86
+		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Debug|x86.Build.0 = Debug|x86
+		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Release|x86.ActiveCfg = Release|x86
+		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

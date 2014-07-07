@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
+using MyException;
 
 namespace HosteeBase
 {
@@ -28,8 +29,20 @@ namespace HosteeBase
             return Li;
         }
 
-        public virtual void SetProperties(SortedList<string,string> envList)
+        public virtual void SetProperties(SortedList<string,string> envList,bool isSetAll=false)
         {
+            if (isSetAll == true)
+            {
+                Li.Clear();
+                List<PropertyInfo> publics = this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance).ToList();
+                List<PropertyInfo> privates = this.GetType().GetProperties(BindingFlags.NonPublic | BindingFlags.Instance).ToList();
+                List<PropertyInfo> allProperties = publics;
+                allProperties.AddRange(privates);
+                foreach (PropertyInfo temp in allProperties)
+                {
+                    Li.Add(temp.Name);
+                }
+            }
             foreach (string temp in Li)
             {
                 List<PropertyInfo> publics=  this.GetType().GetProperties(BindingFlags.Public|BindingFlags.Instance).ToList();
@@ -43,6 +56,10 @@ namespace HosteeBase
                         if (envList.Keys.Contains(tempInfo.Name))
                         {
                             this.GetType().GetProperty(tempInfo.Name).SetValue(this, envList[tempInfo.Name], null);
+                        }
+                        else
+                        {
+                            throw  new MyExceptionClass("Can't find Property :" + tempInfo.Name);
                         }
                     }
                 }
