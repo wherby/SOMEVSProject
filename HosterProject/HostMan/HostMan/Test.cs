@@ -21,6 +21,7 @@ namespace HostMan
             DomainFileIO.WriteAllLines( "text.txt", new string[] { "test" });
             AppDomain ap2 = Hoster.CreateAppDomain();
             AppDomain ap3 = Hoster.CreateAppDomain();
+            Hoster.Invoke("CombinationGenerator.dll", "CombinationGenerator.CombinationGeneratorClass", "Invoke");
             Hoster.Invoke("Hostee1.dll", "Hostee1.Test", "Test1", ap1);
             Hoster.Invoke("Hostee.dll", "Hostee.Test", "Test2");
             Hoster.Invoke("Hostee.dll", "Hostee.Test", "Test2", ap2);

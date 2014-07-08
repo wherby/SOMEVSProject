@@ -77,8 +77,8 @@ namespace HostMan
             wraper = contentDomain.CreateInstanceAndUnwrap(assemblyNameString, typeName);
             //var Type2 = wraper.GetType();
             //var method3 = Type2.GetMethods();
-            List<MethodInfo> publicObj = wraper.GetType().GetMethods(BindingFlags.Public | BindingFlags.Static).ToList<MethodInfo>();
-            List<MethodInfo> privateObj = wraper.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Static).ToList<MethodInfo>();
+            List<MethodInfo> publicObj = wraper.GetType().GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly).ToList<MethodInfo>();
+            List<MethodInfo> privateObj = wraper.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly).ToList<MethodInfo>();
             List<MethodInfo> allMethod = publicObj;
             allMethod.AddRange(privateObj);
             MethodInfo method = SearchMethod(allMethod, methodName);

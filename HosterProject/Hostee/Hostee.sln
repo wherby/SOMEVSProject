@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostee1", "Hostee1\Hostee1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationGenerator", "CombinationGenerator\CombinationGenerator.csproj", "{21EF32A1-A157-45BF-9B34-A4BE9B45163E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseGenerator", "CaseGenerator\CaseGenerator.csproj", "{35FCDB42-5335-4473-94E9-39F901CE98C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -25,6 +27,10 @@ Global
 		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Debug|x86.Build.0 = Debug|x86
 		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Release|x86.ActiveCfg = Release|x86
 		{21EF32A1-A157-45BF-9B34-A4BE9B45163E}.Release|x86.Build.0 = Release|x86
+		{35FCDB42-5335-4473-94E9-39F901CE98C5}.Debug|x86.ActiveCfg = Debug|x86
+		{35FCDB42-5335-4473-94E9-39F901CE98C5}.Debug|x86.Build.0 = Debug|x86
+		{35FCDB42-5335-4473-94E9-39F901CE98C5}.Release|x86.ActiveCfg = Release|x86
+		{35FCDB42-5335-4473-94E9-39F901CE98C5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

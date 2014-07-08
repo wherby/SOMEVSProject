@@ -49,7 +49,7 @@ namespace DomainFile
 
 
 
-        private static string GetDomainDir(AppDomain domain)
+        public static string GetDomainDir(AppDomain domain)
         {
             if (domain == null)
             {
