@@ -1,0 +1,78 @@
+
+
+def packetitem(item,pkg=[]):
+    pkg.append(item)
+    return pkg
+
+
+if __name__ =='__main__':
+    a=packetitem("aa");
+    print a;
+    b=packetitem("bb");
+    print b
+
+
+#result will be
+#['aa']
+#['aa', 'bb']
+
+
+In the example the default value pkg is been evalued once and the next time the pkg is not empty list
+
+
+
+
+def packetitem(item,pkg=None):
+    if pkg is None:
+        pkg=[]
+    pkg.append(item)
+    return pkg
+
+
+if __name__ =='__main__':
+    a=packetitem("aa");
+    print a;
+    b=packetitem("bb");
+    print b
+
+
+
+
+#result wil be
+#['aa']
+#['bb']
+
+
+In the example, the pkg has set to none-mutex value, so the pkg will be set to None when enter the scope
+
+
+
+import copy
+def freshdefaults(f):
+    fdefaults=f.func_defaults
+    def refresher(*args,**kwds):
+        f.func_defaults=copy.deepcopy(fdefaults)
+        return f(*args,**kwds)
+    return refresher
+
+@freshdefaults
+def packetitem(item,pkg=[]):
+    pkg.append(item)
+    return pkg
+
+
+if __name__ =='__main__':
+    a=packetitem("aa");
+    print a;
+    b=packetitem("bb");
+    print b
+
+
+#result will be
+#['aa']
+#['bb']
+
+
+In the example, the decorator has force the function default value "refreshed", which will reload the default value
+
+
